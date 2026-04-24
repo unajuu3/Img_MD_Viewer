@@ -946,7 +946,19 @@ document.getElementById('modal').addEventListener('click', e => {
   if (e.target === document.getElementById('modal')) closeModal();
 });
 
-// ──────────────────────────────────────────────
+//
+
+// ESCキーでモーダルを閉じる処理を追加
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' || e.keyCode === 27) {
+    if (document.getElementById('modal').classList.contains('open')) {
+      closeModal();
+    }
+  }
+});
+
+//
+ ──────────────────────────────────────────────
 //  COPY
 // ──────────────────────────────────────────────
 function copyText(text, btn) {
